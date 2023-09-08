@@ -1,5 +1,5 @@
 import { BaseTable, THead, Th, Tr, Td } from './CryptoHistory.styled';
-
+import { formatDate } from 'helpers/formatData';
 export const CryptoHistory = ({ items }) => {
   return (
     <BaseTable>
@@ -13,16 +13,17 @@ export const CryptoHistory = ({ items }) => {
       </THead>
 
       <tbody>
-        {items.length >0 && items.map(({ id, price, amount, date }, index) => {
-          return (
-            <Tr key={id}>
-              <Td>{index + 1}</Td>
-              <Td>{price}</Td>
-              <Td>{amount}</Td>
-              <Td>{date}</Td>
-            </Tr>
-          );
-        })}
+        {items.length > 0 &&
+          items.map(({ id, price, amount, date }, index) => {
+            return (
+              <Tr key={id}>
+                <Td>{index + 1}</Td>
+                <Td>{price}</Td>
+                <Td>{amount}</Td>
+                <Td>{formatDate(date)}</Td>
+              </Tr>
+            );
+          })}
       </tbody>
     </BaseTable>
   );
