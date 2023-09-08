@@ -10,6 +10,7 @@ import {
 
 import data from 'data/data';
 import article from 'data/article.json';
+import friends from 'data/forbes.json';
 
 export const App = () => {
   return (
@@ -36,7 +37,7 @@ export const App = () => {
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 3
         </Heading>
-        <ForbesList />
+        <ForbesList list={friends} />
 
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 4
